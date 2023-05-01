@@ -8,14 +8,11 @@ window.onload = function(){
       let carrousel__form = document.querySelector(".carrousel__form")
       let fleche__gauche = document.querySelector(".fleche__gauche")
       let fleche__droite = document.querySelector(".fleche__droite")
-
-      let carrouselEstOuvert = false;
+      let body = document.querySelector('.site')
       
       /* -------------------------------------------------------- Variable de la galerie */
       let galerie = document.querySelector(".galerie")
       let galerie__img = galerie.querySelectorAll("img")
-      // console.log("galerie__img: " + galerie__img.length)
-      // console.log(carrousel.tagName)
       /** ---------------------------------------------------- Positionnement de l'img active du carrousel */
       
       let index = 0 
@@ -32,24 +29,20 @@ window.onload = function(){
        elm.dataset.index = position
        elm.addEventListener('mousedown',function(){
    
-         if(carrousel.classList.contains('carrousel--activer') == false){
+         if(!carrousel.classList.contains('carrousel--activer')){
            carrousel.classList.add('carrousel--activer')
          }
          index = this.dataset.index
          afficher_image(index)                      
-         //console.log('numero index : ', index)
        })
    
        creation_img_carrousel(elm)
        creation_radio_carrousel()
-      }
-    
+      }  
    
       /* ----------------------------------------------------  fermer boîte modale */
       carrousel__x.addEventListener('mousedown', function(){
-          //console.log('fermer la boîte modale')
           carrousel.classList.remove('carrousel--activer')
-   
       })
    
       /* ----------------------------------------------------  changer img avec fleches */
@@ -59,7 +52,6 @@ window.onload = function(){
          if(index == 0){
            index = galerie__img.length-1
          } else { index--}
-         console.log("cjnsbajcbso", index);
        afficher_image(index)
       
      })
@@ -68,9 +60,7 @@ window.onload = function(){
        //console.log('changer photo a droite',index)
          if(index == galerie__img.length-1){
            index=0
-         } else{index++}
-         console.log("cjnsbajcbso", index);
-       
+         } else{index++}       
        afficher_image(index)
        
      })
