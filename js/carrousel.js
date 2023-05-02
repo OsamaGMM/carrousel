@@ -8,7 +8,6 @@ window.onload = function(){
       let carrousel__form = document.querySelector(".carrousel__form")
       let fleche__gauche = document.querySelector(".fleche__gauche")
       let fleche__droite = document.querySelector(".fleche__droite")
-      let body = document.querySelector('.site')
       
       /* -------------------------------------------------------- Variable de la galerie */
       let galerie = document.querySelector(".galerie")
@@ -38,7 +37,9 @@ window.onload = function(){
    
        creation_img_carrousel(elm)
        creation_radio_carrousel()
-      }  
+      }
+
+      
    
       /* ----------------------------------------------------  fermer boîte modale */
       carrousel__x.addEventListener('mousedown', function(){
@@ -48,7 +49,6 @@ window.onload = function(){
       /* ----------------------------------------------------  changer img avec fleches */
    
       fleche__gauche.addEventListener('mousedown', function(){
-       //console.log('changer photo a gauche',index)
          if(index == 0){
            index = galerie__img.length-1
          } else { index--}
@@ -57,7 +57,6 @@ window.onload = function(){
      })
    
      fleche__droite.addEventListener('mousedown', function(){
-       //console.log('changer photo a droite',index)
          if(index == galerie__img.length-1){
            index=0
          } else{index++}       
@@ -67,13 +66,9 @@ window.onload = function(){
    
     
       function creation_img_carrousel(elm){
-   
-        //console.log(elm.getAttribute('src'))
-        let img = document.createElement('img')
-        //img.setAttribute('src', elm.getAttribute('src'))
+           let img = document.createElement('img')
         img.src = elm.src
         img.classList.add('carrousel__img')
-        //console.log (img.getAttribute('src'))
         carrousel__figure.appendChild(img)
         
       }
@@ -86,7 +81,6 @@ window.onload = function(){
       function creation_radio_carrousel(){
    
       let rad = document.createElement('input')
-      //console.log(rad.tagName)
       rad.setAttribute('type', 'radio')
       rad.setAttribute('name', 'carrousel__rad')
       rad.classList.add('carrousel__rad')
@@ -99,19 +93,16 @@ window.onload = function(){
       rad.addEventListener('mousedown', function(){
        index = this.dataset.index
        afficher_image(index)
-       //console.log('index : ',this.dataset.index)
       })
       }
    
       function afficher_image(index){
    
        if(dernier__index != -1){
-         //carrousel__figure.children[dernier__index].style.opacity = 0
          carrousel__figure.children[dernier__index].classList.remove('carrousel__img--activer')
          carrousel__form.children[dernier__index].checked = false 
        } 
-       //carrousel__figure.children[this.dataset.index].style.opacity = 1
-       //console.log(index)
+
       
        carrousel__figure.children[index].classList.add('carrousel__img--activer')
        carrousel__form.children[index].checked = true
