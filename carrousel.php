@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin name: Carrousel Eddy
- * Author: Eddy Martin
- * Author URI: https://github.com/eddytuto
+ * Plugin name: Carrousel Osama
+ * Author: Osama Madi
+ * Author URI: https://github.com/osamagmm
  * Description: Cette extension carrousel permettra d'afficher dans une boîte modale animée les images d'une galerie
  * Version: 1.0.0
  */
