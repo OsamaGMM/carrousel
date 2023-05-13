@@ -13,7 +13,7 @@ window.onload = function(){
     let galerie = document.querySelector('.galerie')
     let galerie__img = galerie.querySelectorAll('img')
  
- carrousel__prec.addEventListener('mousedown', function(){
+    fleche__gauche.addEventListener('mousedown', function(){
     index--
     if (index == -1){
        index = galerie__img.length-1
@@ -22,7 +22,7 @@ window.onload = function(){
  
  })
  
- carrousel__suiv.addEventListener('mousedown', function(){
+ fleche__droite.addEventListener('mousedown', function(){
     index++
     // on 5 images
     //  0 1 2 3 4 ->debordement 5 
